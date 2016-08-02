@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script>
+        /*
+        *canvas.height
+        * canvas.width
+        * canvas.getContext()
+        *
+        * 左上角为原点
+        * 右侧是X轴正轴
+        *
+        * context.lineWidth
+        * context.strokeStyle = "#0000"
+        *
+        *
+        * context.fillStyle
+        * context.fill()
+         */
+        window.onload = function() {
+            var canvas = document.getElementById("canvas");
+            canvas.width = 1024;
+            canvas.height = 768;
+
+            if(canvas.getContext("2d")){
+                var context = canvas.getContext("2d");
+            }else{
+                alert("请更换浏览器");
+            }
+
+            context.moveTo(100,100);
+            context.lineTo(700,700);
+            context.lineTo(100,700)
+            context.lineTo(100,100);
+            context.lineWidth = 5;
+            context.strokeStyle = "red";
+            context.fillStyle = "blue";
+            context.fill();
+            context.stroke();
+            context.closePath();
+
+            context.beginPath();
+            context.moveTo(500,100);
+            context.lineTo(900,300);
+            context.lineTo(400,400);
+            context.lineTo(500,100);
+            context.lineWidth = 2;
+            context.strokeStyle = "yellow";
+            context.stroke();
+
+
+        }
+
+    </script>
+</head>
+<body>
+<canvas id="canvas" width="768" height="1024" style=" display: block; border:1px solid red; margin: 0 auto"></canvas>
+</body>
+</html>

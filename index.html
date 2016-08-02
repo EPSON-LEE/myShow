@@ -1,0 +1,135 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style type="text/css">
+    *{margin:0;
+     padding:0;
+     font-size:13px;
+     list-style:none;}
+
+.menu{width:210px;
+      margin:50px auto;
+      border:1px solid #ccc;}
+
+.menu p{height:25px;
+        line-height:25px;
+        font-weight:bold;
+        background:#eee;
+        border-bottom:1px solid #ccc;
+        cursor:pointer;
+        padding-left:5px;}
+
+.menu div ul{display:none;}
+
+.menu li{height:24px;
+         line-height:24px;
+         padding-left:5px;}
+.menu li a{
+	text-decoration: none;
+	color: inherit;
+}
+.menu li a:hover{
+	color:orange;
+}
+</style>
+	<script type="text/javascript">
+	window.onload=function(){
+		var menu=document.getElementById('menu'),
+			ps=menu.getElementsByTagName('p'),
+			uls=menu.getElementsByTagName('ul');
+			for(var i in ps){
+				ps[i].id=i;
+				ps[i].onclick=function(){
+					var u=uls[this.id];
+					if(u.style.display=='block'){
+						u.style.display='none';
+					}else{
+						u.style.display='block';
+					}	
+				}
+			}
+	}
+	function jumpToWebSite(){
+		window.location.href="http://leejiahao.com";
+	}
+	function jumpToGithubPage(){
+		window.location.href="http://epson-lee.github.io";
+	}
+
+
+	</script>
+</head>
+<body>
+	<div class="menu" id="menu">
+		<div>
+			<p>我的博客</p>
+			<ul  style="display:block">
+				<li><a onclick="jumpToWebSite()">Leejiahao.com</a></li>
+				<li><a onclick="jumpToGithubPage()">EPSON-LEE.github.io</a></li>
+			</ul>
+		</div>
+		<div>
+			<p>原生JS网页特效</p>
+			<ul>
+				<li><a href="HTMLPage1.html">商场导航效果</a></li>
+				<li><a href="select_finished.html">下拉列表</a></li>
+				<li><a href="text.html">商场导航效果</a></li>
+				<li><a href="backToTop">回到顶部</a></li>
+			</ul>
+		</div>
+		<div>
+			<p>JqueryDemo</p>
+			<ul>
+				<li><a href="jqueryDemo/chapter2/demo2.6.html">demo1</a></li>
+				<li><a href="jqueryDemo/chapter3/demo3.3.html">demo2</a></li>
+				<li><a href="jqueryDemo/chapter3/demo3.3-2.html">demo3</a></li>
+			</ul>
+		</div>
+		<div>
+			<p>CanvasDemo</p>
+			<ul>
+				<li><a href="canvas/index.html">demo1</a></li>
+				<li><a href="canvas/tangram.html">demo2七巧板</a></li>
+				<li><a href="canvas/ball.html">demo3</a></li>
+			</ul>
+		</div>
+		<div>
+			<p>Javascript数据结构与算法例程</p>
+			<ul>
+				<li><a href="jsad/linkedlist/node.js">链表</a></li>
+				<li><a href="jsad/queue/queue.js.js">队列</a></li>
+				<li><a href="jsad/stack/栈原型及测试/stack.js">堆栈</a></li>
+				<li><a href="jsad/stack/栈原型及测试/fact.js">堆栈模拟阶乘</a></li>
+				<li><a href="jsad/stack/栈原型及测试/factorial.js">递归模拟阶乘</a></li>
+				<li><a href="jsad/stack/栈原型及测试/isPalindrome.js">回文数检测</a></li>
+				<li><a href="jsad/stack/栈原型及测试/mulBase.js">递归实现进制转换</a></li>
+			</ul>
+		</div>
+		<div>
+			<p>一些小的作品</p>
+			<ul>
+				<li><a href="chromePlugs/popup.html">Chrome天气查询插件</a></li>
+				<li><a href="bootStrapDemo">BootstrapDemo</a></li>
+				<li><a href="bootStrapDemo/introduce.html">BootstrapIntroduceDemo</a></li>
+			</ul>
+
+			<div>
+				<p>百度IFE学院</p>
+				<ul>
+					<li><a href="chromePlugs/popup.html">Chrome天气查询插件</a></li>
+					<li><a href="bootStrapDemo">BootstrapDemo</a></li>
+					<li><a href="bootStrapDemo/introduce.html">BootstrapIntroduceDemo</a></li>
+				</ul>
+			</div>
+		<div>
+			<p>项目整站</p>
+			<ul>
+				<li><a href="canvas/index.html">响应式网站</a></li>
+				<li><a href="canvas/index.html">HybridApp</a></li>
+			</ul>
+		</div>
+	</div>
+</body>
+</html>

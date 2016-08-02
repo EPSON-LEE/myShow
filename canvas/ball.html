@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<canvas id="canvas"></canvas>
+<script>
+    /*
+    context.arc(
+        centerx,centery,radius,
+        startingAngel(默认90度位置),endingAngle,
+        (anticlockwise = false)方向 默认false )
+
+        beginPath + closePath不一定要一一对应
+        context.stroke 在beiginPath + closePath之外首尾路径才相连
+        只有beginPath 首尾不相连
+
+
+     */
+    var $ = function(id){
+        return document.getElementById(id);
+    }
+    window.onload = function(){
+        var canvas = document.getElementById("canvas")
+        var context = $("canvas").getContext("2d");
+        canvas.width = 1024;
+        canvas.height = 768;
+        context.lineWidth = 5;
+        context.arc(300,300,200,0,1*Math.PI);
+        context.stroke();
+
+
+        context.strokeStyle = "red";
+        context.lineWidth = 5;
+        context.fillStyle = "green";
+        for(var i = 0; i<10; i++){
+            context.beginPath();
+            context.arc(50+i*100, 180, 20, 0,2*Math.PI*(i+1)/10);
+            context.closePath();
+            context.fill();
+        }
+
+
+        context.strokeStyle = "blue";
+        context.lineWidth = 5;
+        for(var i = 0; i<10; i++){
+            context.beginPath();
+            context.arc(50+i*100, 120, 30, 0, 2*Math.PI*(i+1)/10,true);
+            context.stroke();
+            context.closePath();
+
+        }
+
+    }
+</script>
+</body>
+</html>
