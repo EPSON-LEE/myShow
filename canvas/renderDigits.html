@@ -3,7 +3,106 @@
 <head>
     <meta charset="UTF-8">
     <title>renderDigits</title>
+
+    <script>
+        function do_something(n, s, l){
+            //你的代码
+            //7 2 6
+            //4
+            var everyCdNumber = 0;
+            var totalCdNumber = 1;
+            var t = l;
+            if((n<=100) && (s<=l) &&(l<=10000)) {
+                while (n) {
+                    if (l >= s) {
+                        l = l - s - 1;
+                        n--;
+                        everyCdNumber++;
+                    } else {
+                        if(everyCdNumber%13==0){
+                            totalCdNumber++;
+                            l = t;
+                            l = l-s-1;
+                            everyCdNumber = 0;
+
+                        }else{
+                            totalCdNumber++;
+                            l = t;
+                            everyCdNumber = 0;
+                        }
+                    }
+                }
+            }
+
+            console.log(totalCdNumber);
+
+        }
+
+        var st=new Date().getTime();
+        do_something(100,687,9527);
+        var st2=new Date().getTime() - st;
+        document.write("上面代码的执行时间为"+st2+"毫秒");
+
+//        function do_something(n, s, l){
+//            var count=0;
+//            if(n<=100&&s<=l&&l<=10000){
+//                var max=Math.ceil(l/s);
+//                var t=0;
+//                for(i=max;i>=1;i--){ //每张CD最多收录的歌曲数量
+//                    t=s*i+(i-1);
+//                    if(l>=t){
+//                        break;
+//                    }
+//                }
+//                if(n<i)i=n; //每张CD最多收录的歌曲数量大于歌曲总数量，赋值统一操作
+//                if (i % 13 == 0) { //歌曲总数量可被13整除
+//                    i=i-1;
+//                }
+//                count = Math.ceil(n / i); //计算所需 CD的数量
+//                // 歌曲总数量除每张CD收录的歌曲数量的余数可被13整除，并且， 每张CD收录的歌曲数量减一可被13整除
+//                if(n%i==13&&(i-1)%13==0)count=count+1;
+//            }
+//            console.log(count);
+//            return count;
+//        }
+
+//        function getNthFibonacco(count){
+//            var arr = [1];
+//            var i = 1;
+//            var t = 0;
+//            while(count >= i) {
+//                if (i == 1) {
+//                    arr.push(i);
+//                } else {
+//                    t = arr[i - 1] + arr[i - 2];
+//                    arr.push(t);
+//                }
+//                i++;
+//            }
+//            console.log(arr[count]);
+//        }
+//        getNthFibonacco(4);
+//        function do_something(n, s, l){
+//            var x = 0,
+//                    M = Math,
+//                    pow = M.pow
+//
+//            while(!((n*s+n)/(x*s+1)%13!=0 &&
+//            (n*pow(s,2) + 2*n*s + n) / (x*s + 1) <= l+1 &&
+//            (n*s+n)/(x*s+1) <= l)
+//                    ) {
+//
+//                x++;
+//            }
+//
+//            return x;
+//        }
+
+
+//        console.log(do_something(27, 1, 27));
+    </script>
 </head>
+
 <body>
 
 <canvas id="canvas"></canvas>
